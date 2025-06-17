@@ -49,9 +49,59 @@ test () {
 	# cp 009_slli_out/009_slli_hex.txt ../imem.txt
 
 	# slti
-	./compile.sh 010_slti
+	# ./compile.sh 010_slti
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 010_slti_out/010_slti_hex.txt ../imem.txt
+
+	# sltiu
+	# ./compile.sh 011_sltiu
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 011_sltiu_out/011_sltiu_hex.txt ../imem.txt
+
+	# xori
+	# ./compile.sh 012_xori
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 012_xori_out/012_xori_hex.txt ../imem.txt
+
+	# srli
+	# ./compile.sh 013_srli
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 013_srli_out/013_srli_hex.txt ../imem.txt
+
+	# srai
+	# ./compile.sh 014_srai
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 014_srai_out/014_srai_hex.txt ../imem.txt
+
+	# ori
+	# ./compile.sh 015_ori
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 015_ori_out/015_ori_hex.txt ../imem.txt
+
+	# andi
+	# ./compile.sh 016_andi
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 016_andi_out/016_andi_hex.txt ../imem.txt
+
+	# andi
+	# ./compile.sh 017_auipc
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 017_auipc_out/017_auipc_hex.txt ../imem.txt
+
+	# sb
+	# ./compile.sh 018_sb
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 018_sb_out/018_sb_hex.txt ../imem.txt
+
+	# sh
+	# ./compile.sh 019_sh
+	# cp dmem_zeros_64.txt ../dmem.txt
+	# cp 019_sh_out/019_sh_hex.txt ../imem.txt
+
+	# sw
+	./compile.sh 020_sw
 	cp dmem_zeros_64.txt ../dmem.txt
-	cp 010_slti_out/010_slti_hex.txt ../imem.txt
+	cp 020_sw_out/020_sw_hex.txt ../imem.txt
 
 	cd ..
 	core

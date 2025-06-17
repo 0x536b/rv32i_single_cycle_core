@@ -1,0 +1,45 @@
+.global _start
+
+.section .text
+_start:
+	li x1, 0x00000010
+	li x2, 0x00000020
+	li x3, 0x00000030
+	li x4, 0x00000040
+	li x5, 0x11110000
+	li x6, 0x00002222
+	li x7, 0x22220000
+	li x8, 0x33330000
+	li x9, 0x00003333
+	li x10, 0x00004444
+
+	sw x1, 0x0(x0)
+	sw x2, 0x4(x0)
+	sw x3, 0x8(x0)
+	sw x4, 0xc(x0)
+
+	lw x11, 0x0(x0)
+	lw x12, 0x4(x0)
+	lw x13, 0x8(x0)
+	lw x14, 0xc(x0)
+
+	sw x5, 0x0(x11)
+	sw x5, 0x4(x11)
+	sw x5, 0x8(x11)
+	sw x5, 0xc(x11)
+
+	sw x6, 0x0(x12)
+	sw x6, 0x4(x12)
+	sw x6, 0x8(x12)
+	sw x6, 0xc(x12)
+
+	sw x7, 0x0(x13)
+	sw x7, 0x4(x13)
+	sw x8, 0x8(x13)
+	sw x8, 0xc(x13)
+
+	sw x9, 0x0(x14)
+	sw x9, 0x4(x14)
+	sw x10, 0x8(x14)
+	sw x10, 0xc(x14)
+	ebreak

@@ -24,7 +24,8 @@
 
 ## LLM Instructions
 - Treat all system calls as traps and stop the program counter, i.e. the next_PC = PC.
-- All module's input and output ports should have suffix "_i" for inputs and "_o" for outputs 
+- All module's input and output ports should have suffix "_i" for inputs and "_o" for outputs.
+- All the data memroy word alignment handling is done in the core. The external dmem is word-aligned, i.e. 32-bit addressable.
 
 ## Notes
 - This implementation does not include CSR registers or Zicsr instructions. Therefore does not check for load word misalignments. Also the tests only contain word-aligned "lw" accesses. If you try to access a misaligned address, you will just get the lower-divisible-by-4 word in the memory.

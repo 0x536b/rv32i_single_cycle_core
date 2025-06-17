@@ -37,9 +37,15 @@ module core_tb();
 		$finish;
 
 		// printing for validation
+		$display("PC : <hex> (<decimal>, <decimal/4>)");
 		$display("PC : %h (%D, %D)", DUT.PC, DUT.PC, DUT.PC/4);
+		$display("<Location> : <hex> (<signed decimal>) (<binary>)");
 		for (int i = 0; i < 32; i++) begin
 			$display("RF[%2d] : %h (%D) (%b)", i, DUT.rf.rf[i], $signed(DUT.rf.rf[i]), DUT.rf.rf[i]);
+		end
+		for (int i = 0; i < 64; i++) begin
+			$display("dmem[%2d] : %h (%D) (%b)", i, data_mem.RAM[i], $signed(data_mem.RAM[i]), data_mem.RAM[i]);
+
 		end
 	end
 
