@@ -13,3 +13,4 @@ _start:
 	sltiu x13, x10, -100
 	sltiu x14, x10, 100 # False, as unsinged(-100) is a bigger number
 	ebreak
+	

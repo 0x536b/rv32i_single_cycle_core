@@ -14,3 +14,4 @@ _start:
 	li x8, 0b0011110000
 	ori x9, x7, 0b0011110000
 	ebreak
+	

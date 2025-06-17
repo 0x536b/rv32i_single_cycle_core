@@ -2,7 +2,7 @@ ENTRY(_start)
 
 MEMORY
 {
-	imem (RWX) : ORIGIN = 0x000000, LENGTH = 0x100000
+	imem (RW) : ORIGIN = 0x000000, LENGTH = 0x100000
 }
 SECTIONS
 {

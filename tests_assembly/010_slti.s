@@ -11,4 +11,4 @@ _start:
 	slti x11, x10, -99 
 	slti x12, x10, -101
 	slti x13, x10, -100
-	EBREAK
+	ebreak

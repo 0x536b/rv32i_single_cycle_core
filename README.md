@@ -48,6 +48,7 @@
 - verilator 
 - Surfer 
 - riscv32-unknown-elf-gcc
+- bash
 
 ## LLM Instructions
 - Treat all system calls as traps and stop the program counter, i.e. the next_PC = PC.

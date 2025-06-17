@@ -19,3 +19,4 @@ label2:
 	li x10, 0xAAAAAAAA
 	li x11, 0xAAAAAAAA
 	ebreak
+	

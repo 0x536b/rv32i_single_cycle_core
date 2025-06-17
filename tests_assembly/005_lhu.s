@@ -12,3 +12,4 @@ _start:
 	lhu	x7,  254(x0) 		# 0000_fefe
 	lhu 	x8,  500(x7) 	# 0000_f2f2
 	ebreak
+	

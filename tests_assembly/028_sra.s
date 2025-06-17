@@ -11,3 +11,4 @@ _start:
 	sra x6, x1, x3
 	sra x7, x1, x4
 	ebreak
+	

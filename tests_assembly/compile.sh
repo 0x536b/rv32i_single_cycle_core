@@ -2,10 +2,14 @@
 
 set -eu
 YELLOW='\033[1;33m'
+CYAN='\033[0;36m'         # Cyan
 NC='\033[0m'
 
 FILE=$1
 
+
+# Print title
+echo -e "${CYAN}Compiling ${FILE} ${NC}"
 # delete old files
 echo -e "${YELLOW}Removing old files${NC}"
 rm -rf ${FILE}_out
@@ -32,5 +36,7 @@ riscv64-elf-objcopy -O binary ${FILE}_out/${FILE}.elf ${FILE}_out/${FILE}.bin
 # parsing bin to verilog-friendly hex file
 echo -e "${YELLOW}Parsing ELF to verilog-friendly ASCII-text hex file${NC}"
 hexdump -v -e '1/4 "%08x " "\n"' ${FILE}_out/${FILE}.bin > ${FILE}_out/${FILE}_hex.txt
+
+echo "-------------------------------"
 
 

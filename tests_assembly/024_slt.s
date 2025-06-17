@@ -17,3 +17,4 @@ _start:
 	slt x10, x6, x6 # false
 
 	ebreak
+	

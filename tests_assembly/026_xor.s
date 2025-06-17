@@ -11,3 +11,4 @@ _start:
 	xor x5, x1, x0
 	xor x6, x2, x0
 	ebreak
+	

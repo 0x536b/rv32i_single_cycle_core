@@ -18,6 +18,29 @@ module core_tb();
 	dmem data_mem(.clk(clk), .we(dmem_we), .a(dmem_a), .wd(dmem_wd), .rd(dmem_rd), .w_mask(dmem_write_mask));
 
 
+
+	task automatic dump_regfile_dmem_pc(string filename);
+		integer file;
+		file = $fopen(filename, "w");
+
+		if (file != 0) begin
+			$fwrite(file, "PC : <hex> (<decimal>, <decimal/4>)\n");
+			$fwrite(file, "PC : %h (%D, %D)\n", DUT.PC, DUT.PC, DUT.PC/4);
+			$fwrite(file, "<Location> : <hex> (<signed decimal>) (<binary>)\n");
+			for (int i = 0; i < 32; i++) begin
+				$fwrite(file, "RF[%2d] : %h (%D) (%b)\n", i, DUT.rf.rf[i], $signed(DUT.rf.rf[i]), DUT.rf.rf[i]);
+			end
+			for (int i = 0; i < 64; i++) begin
+				$fwrite(file, "dmem[%2d] : %h (%D) (%b)\n", i, data_mem.RAM[i], $signed(data_mem.RAM[i]), data_mem.RAM[i]);
+			end 
+			$fclose(file);
+			$display("File dump completed: %s", filename);
+		end
+		else begin
+			$error("Could not open file for dump: %s", filename);
+		end
+	endtask
+
 	// clock generator
 	always begin
 		#(CLK_PERIOD / 2);
@@ -36,18 +59,7 @@ module core_tb();
 		#10000;
 		$finish;
 
-		// printing for validation
-		$display("PC : <hex> (<decimal>, <decimal/4>)");
-		$display("PC : %h (%D, %D)", DUT.PC, DUT.PC, DUT.PC/4);
-		$display("<Location> : <hex> (<signed decimal>) (<binary>)");
-		for (int i = 0; i < 32; i++) begin
-			$display("RF[%2d] : %h (%D) (%b)", i, DUT.rf.rf[i], $signed(DUT.rf.rf[i]), DUT.rf.rf[i]);
-		end
-		// for (int i = 0; i < 64; i++) begin
-			// $display("dmem[%2d] : %h (%D) (%b)", i, data_mem.RAM[i], $signed(data_mem.RAM[i]), data_mem.RAM[i]);
-
-		// end
-		// $display("ALU overflow : %b", DUT.ALU)
+		dump_regfile_dmem_pc(`DUMP_FILE);
 	end
 
 

@@ -5,4 +5,5 @@ obj_dir/
 imem.txt
 dmem.txt
 *dump.vcd
+*dump.txt
 *.vcd
