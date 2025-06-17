@@ -15,7 +15,34 @@
 - 008 - `addi`
 - 009 - `slli`
 - 010 - `slti`
-- 0 - ``
+- 011 - `sltiu`
+- 012 - `xori`
+- 013 - `srli`
+- 014 - `srai`
+- 015 - `ori`
+- 016 - `andi`
+- 017 - `auipc`
+- 018 - `sb`
+- 019 - `sh`
+- 020 - `sw`
+- 021 - `add`
+- 022 - `sub`
+- 023 - `sll`
+- 024 - `slt`
+- 025 - `sltu`
+- 026 - `xor`
+- 027 - `srl`
+- 028 - `sra`
+- 029 - `or`
+- 030 - `and`
+- 031 - `beq`
+- 032 - `bne`
+- 033 - `blt`
+- 034 - `bge`
+- 035 - `bltu`
+- 036 - `bgeu`
+- 037 - `jalr`
+- 038 - `jal`
 
 ## Requirements 
 - verilator 
@@ -33,6 +60,7 @@
 - data memory addresses will go up only till the last line of your "dmem.txt" file. Access to any address above that will return the last word in the text file.
 - ALU Can be optimized
 - Datapath can be optimized to use less adders
+- Comparisons in ALU can be optimized
 
 ## Resource and References
 - [Ripes Simulator](https://github.com/mortbopet/Ripes)

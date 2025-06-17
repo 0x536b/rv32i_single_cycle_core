@@ -43,10 +43,11 @@ module core_tb();
 		for (int i = 0; i < 32; i++) begin
 			$display("RF[%2d] : %h (%D) (%b)", i, DUT.rf.rf[i], $signed(DUT.rf.rf[i]), DUT.rf.rf[i]);
 		end
-		for (int i = 0; i < 64; i++) begin
-			$display("dmem[%2d] : %h (%D) (%b)", i, data_mem.RAM[i], $signed(data_mem.RAM[i]), data_mem.RAM[i]);
+		// for (int i = 0; i < 64; i++) begin
+			// $display("dmem[%2d] : %h (%D) (%b)", i, data_mem.RAM[i], $signed(data_mem.RAM[i]), data_mem.RAM[i]);
 
-		end
+		// end
+		// $display("ALU overflow : %b", DUT.ALU)
 	end
 
 
