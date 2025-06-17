@@ -1,0 +1,8 @@
+surfer*
+*_out/
+obj_dir/
+*surfer
+imem.txt
+dmem.txt
+*dump.vcd
+*.vcd
