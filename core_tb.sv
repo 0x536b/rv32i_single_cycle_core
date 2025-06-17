@@ -39,7 +39,7 @@ module core_tb();
 		// printing for validation
 		$display("PC : %h (%D, %D)", DUT.PC, DUT.PC, DUT.PC/4);
 		for (int i = 0; i < 32; i++) begin
-			$display("RF[%2d] : %h (%D)", i, DUT.rf.rf[i], $signed(DUT.rf.rf[i]));
+			$display("RF[%2d] : %h (%D) (%b)", i, DUT.rf.rf[i], $signed(DUT.rf.rf[i]), DUT.rf.rf[i]);
 		end
 	end
 

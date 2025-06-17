@@ -16,7 +16,7 @@ mkdir -p ${FILE}_out
 
 # Compiling to binary
 echo -e "${YELLOW}Compiling to binary${NC}" 
-riscv32-unknown-elf-gcc \
+riscv32-unknown-elf-gcc -march=rv32i -mabi=ilp32 \
 -ffreestanding -nostartfiles -nostdlib \
 -Tverilator.ld ${FILE}.s -o ${FILE}_out/${FILE}.elf
 

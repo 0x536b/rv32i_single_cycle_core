@@ -73,7 +73,7 @@ module core (
 
 	assign ReadData_byte_signed 	= {{24{ReadData_wanted_byte[7]}}, ReadData_wanted_byte};
 	assign ReadData_byte_unsigned 	= {{24{1'b0}}, ReadData_wanted_byte[7:0]};
-	assign ReadData_half_signed		= {{16{ReadData_raw[15]}}, ReadData_wanted_halfword};
+	assign ReadData_half_signed		= {{16{ReadData_wanted_halfword[15]}}, ReadData_wanted_halfword};
 	assign ReadData_half_unsigned	= {{16{1'b0}}, ReadData_wanted_halfword};
 
 	always_comb begin
